@@ -5,18 +5,18 @@
             <form action="" class="form">
                 <div class="form-group">
                     <label for="">Student Name</label>
-                    <input type="text" class="form-control" placeholder="Enter student name">
+                    <input type="text" class="form-control" placeholder="Enter student name" name="name" [(ngModel)]="name">
                 </div>
                 <div class="form-group">
                     <label for="">Course Name</label>
-                    <input type="text" class="form-control" placeholder="Enter course name">
+                    <input type="text" class="form-control" placeholder="Enter course name" name="course" [(ngModel)]="course">
                 </div>
                 <div class="form-group">
                     <label for="">Fee</label>
-                    <input type="text" class="form-control" placeholder="Enter fees">
+                    <input type="text" class="form-control" placeholder="Enter fees" name="fee" [(ngModel)]="fee">
                 </div>
                 <br>
-                <input type="submit" class="btn btn-outline-success btn-sm" value="ADD">
+                <input type="submit" class="btn btn-outline-success btn-sm" value="ADD" (click)="add()">
             </form>
         </div>
         <div class="col-md-9">

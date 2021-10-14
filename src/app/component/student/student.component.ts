@@ -12,6 +12,11 @@ import {map} from 'rxjs/operators'
 export class StudentComponent implements OnInit {
   students?:Student[];
 
+  name?:string
+  course?:string
+  fee?:number
+
+  student?:Student
   constructor(private studentSer:StudentService) { }
 
   ngOnInit(): void {
@@ -26,5 +31,24 @@ export class StudentComponent implements OnInit {
       console.log(error)
     });
   }
+
+  add(){
+    this.student={
+      student_name:this.name,
+      course:this.course,
+      fee:this.fee
+    }
+
+    this.studentSer.create(this.student).subscribe(data=>{
+      this.reloadData();
+      this.name=""
+      this.fee
+      this.course=""
+    },error=>{
+      console.log(error)
+    }
+    )
+  }
+
 
 }
