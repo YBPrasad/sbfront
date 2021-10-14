@@ -16,7 +16,7 @@ export class StudentService {
     return this.http.get<Student[]>(`${this.baseUrl}`);
   }
 
-  getStudent(id:number){
-    
+  create(data:Student):Observable<Student>{
+    return this.http.post(`${this.baseUrl}`,data);
   }
 }
