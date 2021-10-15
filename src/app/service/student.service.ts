@@ -19,4 +19,12 @@ export class StudentService {
   create(data:Student):Observable<Student>{
     return this.http.post(`${this.baseUrl}`,data);
   }
+
+  updateStudent(std:Student,id:number):Observable<Student>{
+    return this.http.put(this.baseUrl+'/'+id,std);
+  }
+
+  deleteStudent(id:number):Observable<Student>{
+    return this.http.delete(this.baseUrl+'/'+id);
+  }
 }

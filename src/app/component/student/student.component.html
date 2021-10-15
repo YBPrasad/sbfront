@@ -16,7 +16,9 @@
                     <input type="text" class="form-control" placeholder="Enter fees" name="fee" [(ngModel)]="fee">
                 </div>
                 <br>
-                <input type="submit" class="btn btn-outline-success btn-sm" value="ADD" (click)="add()">
+                <input type="submit" class="btn btn-outline-success btn-sm" *ngIf="!isUpdate" value="ADD" (click)="add()">
+                <input type="submit" class="btn btn-outline-warning btn-sm" *ngIf="isUpdate" value="UPDATE" (click)="update()">
+
             </form>
         </div>
         <div class="col-md-9">
@@ -41,8 +43,8 @@
                         <td>{{student.course}}</td>
                         <td>{{student.fee}}</td>
                         <td>
-                            <button class="btn btn-sm btn-warning">Edit</button>&nbsp;
-                            <button class="btn btn-sm btn-danger">Delete</button>
+                            <button class="btn btn-sm btn-warning" (click)="edit(student.id,student.student_name,student.course,student.fee)">Edit</button>&nbsp;
+                            <button class="btn btn-sm btn-danger" (click)="delete(student.id)">Delete</button>
 
                         </td>
                     </tr>
