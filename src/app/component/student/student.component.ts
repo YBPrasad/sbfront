@@ -12,9 +12,11 @@ import {map} from 'rxjs/operators'
 export class StudentComponent implements OnInit {
   students?:Student[];
 
+  id:number=0
   name?:string
   course?:string
   fee?:number
+  isUpdate:boolean=false;
 
   student?:Student
   constructor(private studentSer:StudentService) { }
@@ -42,12 +44,51 @@ export class StudentComponent implements OnInit {
     this.studentSer.create(this.student).subscribe(data=>{
       this.reloadData();
       this.name=""
-      this.fee
+      this.fee=0
       this.course=""
     },error=>{
       console.log(error)
     }
     )
+  }
+
+  edit(id:any,name:any,course:any,fee:any){
+    this.id=id
+    this.name=name;
+    this.course=course;
+    this.fee=fee;
+    this.isUpdate=true;
+  }
+
+  update(){
+    this.student={
+      id:this.id,
+      student_name:this.name,
+      course:this.course,
+      fee:this.fee
+    }
+
+    this.studentSer.updateStudent(this.student,this.id).subscribe(data=>{
+      console.log(data)
+      this.id=0
+      this.name="";
+      this.course=""
+      this.fee=0;
+      this.isUpdate=false;
+      this.reloadData();
+
+    },error=>{
+      console.log(error)
+    })
+  }
+
+  delete(id:any){
+    this.studentSer.deleteStudent(id).subscribe(data=>{
+      console.log(data)
+      this.reloadData();
+    },error=>{
+      console.log(error)
+    })
   }
 
 
