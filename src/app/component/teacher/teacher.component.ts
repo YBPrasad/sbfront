@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TeacherService } from 'src/app/service/teacher.service';
+import { Teacher } from 'src/app/teacher';
 
 @Component({
   selector: 'app-teacher',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeacherComponent implements OnInit {
 
-  constructor() { }
+  name?:string;
+  course?:string;
+  isUpdate:boolean=false;
+  teacher?:Teacher
+
+  constructor(private teacherSer:TeacherService) { }
 
   ngOnInit(): void {
+  }
+
+  add(){
+    this.teacher={
+      teacher_name:this.name,
+      course:this.course
+    }
+    this.teacherSer.addNewTeacher(this.teacher).subscribe(data=>{
+      console.log(data);
+    },error=>{
+      console.log(error);
+    })
+    
   }
 
 }
