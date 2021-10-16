@@ -1,7 +1,8 @@
 <div class="student">
 <div class="row">
         <div class="col-md-3">
-            <p class="title">ADD NEW STUDENT</p>
+            <p class="title" *ngIf="!isUpdate">ADD NEW STUDENT</p>
+            <p class="title"*ngIf="isUpdate">EDIT STUDENT</p>
             <form action="" class="form">
                 <div class="form-group">
                     <label for="">Student Name</label>

@@ -37,6 +37,7 @@ export class TeacherComponent implements OnInit {
     }
     this.teacherSer.addNewTeacher(this.teacher).subscribe(data=>{
       console.log(data);
+      this.reload();
     },error=>{
       console.log(error);
     })
