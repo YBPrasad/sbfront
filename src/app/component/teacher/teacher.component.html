@@ -20,7 +20,33 @@
             </form>
         </div>
         <div class="col-md-9">
+            <p class="title">TEACHERS LIST</p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Teacher ID</th>
+                        <th>Teacher Name</th>
+                        <th>Course</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    <tr *ngFor="let teacher of teachers;let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{teacher.id}}</td>
+                        <td>{{teacher.teacher_name}}</td>
+                        <td>{{teacher.course}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" (click)="edit(teacher.id,teacher.teacher_name,teacher.course)">Edit</button>&nbsp;
+                            <button class="btn btn-sm btn-danger">Delete</button>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

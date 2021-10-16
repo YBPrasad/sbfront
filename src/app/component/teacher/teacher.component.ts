@@ -9,14 +9,25 @@ import { Teacher } from 'src/app/teacher';
 })
 export class TeacherComponent implements OnInit {
 
+  id?:number
   name?:string;
   course?:string;
   isUpdate:boolean=false;
   teacher?:Teacher
 
+  teachers?:Teacher[]
   constructor(private teacherSer:TeacherService) { }
 
   ngOnInit(): void {
+    this.reload();
+  }
+
+  reload(){
+    this.teacherSer.getAll().subscribe(data=>{
+      this.teachers=data;
+    },error=>{
+      console.log(error)
+    })
   }
 
   add(){
@@ -31,5 +42,14 @@ export class TeacherComponent implements OnInit {
     })
     
   }
+
+  edit(id:any,name:any,course:any){
+    this.isUpdate=true;
+    this.id=id;
+    this.name=name;
+    this.course=course
+  }
+
+
 
 }
