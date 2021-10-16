@@ -15,4 +15,12 @@ export class TeacherService {
     return this.http.post(`${this.baseUrl}`,teacher);
   }
 
+  getAll():Observable<Teacher[]>{
+    return this.http.get<Teacher[]>(`${this.baseUrl}`);
+  }
+
+  updateTeacher(teacher:Teacher,id:any){
+    return this.http.put(`${this.baseUrl}`+"/"+id,teacher);
+  }
+
 }
