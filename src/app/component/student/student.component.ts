@@ -18,6 +18,10 @@ export class StudentComponent implements OnInit {
   fee?:number
   isUpdate:boolean=false;
 
+  displayedColumns: string[] = ['Id', 'Name', 'Fee', 'Course'];
+  dataSource:Student[]=[]
+  selectedIndex:number=0;
+
   student?:Student
   constructor(private studentSer:StudentService) { }
 
@@ -28,6 +32,7 @@ export class StudentComponent implements OnInit {
   reloadData(){
     this.studentSer.getAllStudents().subscribe(data=>{
       this.students=data
+      this.dataSource = this.students;
       console.log(this.students)
     },error=>{
       console.log(error)
@@ -53,6 +58,7 @@ export class StudentComponent implements OnInit {
   }
 
   edit(id:any,name:any,course:any,fee:any){
+    this.selectedIndex=1
     this.id=id
     this.name=name;
     this.course=course;
@@ -69,6 +75,7 @@ export class StudentComponent implements OnInit {
     }
 
     this.studentSer.updateStudent(this.student,this.id).subscribe(data=>{
+      this.selectedIndex=3
       console.log(data)
       this.id=0
       this.name="";
