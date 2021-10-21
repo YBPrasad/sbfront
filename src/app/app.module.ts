@@ -18,8 +18,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-
-
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +41,15 @@ import {MatIconModule} from '@angular/material/icon';
     MatDividerModule,
     MatButtonModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTabsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  providers: [],
+  providers: [
+    {provide: MatFormFieldModule, useValue: {appearance: 'fill'}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
