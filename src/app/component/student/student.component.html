@@ -1,4 +1,33 @@
-<div class="student">
+<mat-tab-group>
+    <mat-tab label="Add New Student">
+        <div class="formfield">
+            <mat-card>
+                <mat-card-title>ONLINE SCHOOL FORM</mat-card-title>
+                <mat-card-content>
+                    <mat-form-field>
+                        <mat-label>Student Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <mat-label>Course Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <mat-label>Fee</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </mat-card-content>
+                <mat-card-footer><button mat-button></button></mat-card-footer>
+            </mat-card>
+            
+        </div>
+    </mat-tab>
+    <mat-tab label="Show All Students"> Content 2 </mat-tab>
+</mat-tab-group>
+
+<!-- <div class="student">
 <div class="row">
         <div class="col-md-3">
             <p class="title" *ngIf="!isUpdate">ADD NEW STUDENT</p>
@@ -53,5 +82,5 @@
             </table>
         </div>
 </div>
-</div>
+</div> -->
 

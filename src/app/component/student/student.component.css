@@ -4,3 +4,21 @@
     color: blue;
     
 }
+
+.formfield{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+mat-card{
+    
+    width: 500px;
+}
+
+mat-form-field{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
