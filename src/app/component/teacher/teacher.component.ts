@@ -51,6 +51,24 @@ export class TeacherComponent implements OnInit {
     this.course=course
   }
 
+  update(){
+    this.teacher={
+      teacher_name:this.name,
+      course:this.course
+    }
+
+    this.teacherSer.updateTeacher(this.teacher,this.id).subscribe(data=>{
+      console.log(data)
+      this.name=""
+      this.course=""
+      this.isUpdate=false
+      this.reload()
+    },error=>{
+      console.log(error);
+      
+    })
+  }
+
 
 
 }
