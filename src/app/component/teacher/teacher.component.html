@@ -15,7 +15,7 @@
 
                 <br>
                 <input type="submit" *ngIf="!isUpdate" class="btn btn-sm btn-outline-success" (click)="add()" value="ADD">
-                <input type="submit" *ngIf="isUpdate" class="btn btn-sm btn-outline-warning" value="UPDATE">
+                <input type="submit" *ngIf="isUpdate" class="btn btn-sm btn-outline-warning" (click)="update()" value="UPDATE">
 
             </form>
         </div>

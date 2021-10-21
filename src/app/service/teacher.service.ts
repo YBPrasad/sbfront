@@ -19,8 +19,12 @@ export class TeacherService {
     return this.http.get<Teacher[]>(`${this.baseUrl}`);
   }
 
-  updateTeacher(teacher:Teacher,id:any){
+  updateTeacher(teacher:Teacher,id:any):Observable<Teacher>{
     return this.http.put(`${this.baseUrl}`+"/"+id,teacher);
+  }
+
+  deleteTeacher(id:any){
+
   }
 
 }
