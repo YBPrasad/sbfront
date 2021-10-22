@@ -24,3 +24,8 @@ mat-sidenav{
     font-size: 2rem;
     color:lightgray */
 }
+
+.menu-button{
+    width: 100%;
+    font-size:1rem;
+}

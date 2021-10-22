@@ -47,7 +47,9 @@ export class StudentComponent implements OnInit {
     }
 
     this.studentSer.create(this.student).subscribe(data=>{
+
       this.reloadData();
+      this.selectedIndex=0
       this.name=""
       this.fee=0
       this.course=""

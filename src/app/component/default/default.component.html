@@ -8,10 +8,14 @@
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav">
-        <button mat-button class="menu-button">
+        <a routerLink="" mat-button class="menu-button">
             <mat-icon>home</mat-icon>
-            <span>Home</span>
-          </button>
+            <span>Student</span>
+        </a>
+        <a routerLink="/teachers" mat-button class="menu-button">
+            <mat-icon>home</mat-icon>
+            <span>Teacher</span>
+        </a>
     </mat-sidenav>
 
     <mat-sidenav-content>
