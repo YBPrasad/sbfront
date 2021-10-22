@@ -1,4 +1,4 @@
-<mat-tab-group>
+<mat-tab-group [(selectedIndex)]="selectedIndex">
     <mat-tab label="Show All Teachers">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -45,7 +45,31 @@
         </div>
     </mat-tab>
     <mat-tab label="Edit Teachers">
-        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Teacher ID</th>
+                    <th>Teacher Name</th>
+                    <th>Course</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let teacher of teachers;let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{teacher.id}}</td>
+                    <td>{{teacher.teacher_name}}</td>
+                    <td>{{teacher.course}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning" (click)="edit(teacher.id,teacher.teacher_name,teacher.course)">Edit</button>&nbsp;
+                        <button class="btn btn-sm btn-danger" (click)="delete(teacher.id)">Delete</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
     </mat-tab>
 </mat-tab-group>
 <!-- <div class="teacher">

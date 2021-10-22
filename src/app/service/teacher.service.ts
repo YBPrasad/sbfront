@@ -24,7 +24,7 @@ export class TeacherService {
   }
 
   deleteTeacher(id:any){
-
+    return this.http.delete(`${this.baseUrl}`+"/"+id);
   }
 
 }

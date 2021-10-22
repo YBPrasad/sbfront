@@ -17,6 +17,7 @@ export class TeacherComponent implements OnInit {
 
   displayedColumns: string[] = ['Id', 'Name','Course'];
   dataSource:Teacher[]=[]
+  selectedIndex:number=0
 
   teachers?:Teacher[]
   constructor(private teacherSer:TeacherService) { }
@@ -41,6 +42,8 @@ export class TeacherComponent implements OnInit {
       course:this.course
     }
     this.teacherSer.addNewTeacher(this.teacher).subscribe(data=>{
+      this.name="";
+      this.course=""
       console.log(data);
       this.reload();
     },error=>{
@@ -54,6 +57,7 @@ export class TeacherComponent implements OnInit {
     this.id=id;
     this.name=name;
     this.course=course
+    this.selectedIndex=1
   }
 
   update(){
@@ -74,6 +78,13 @@ export class TeacherComponent implements OnInit {
     })
   }
 
+  delete(id:any){
+    this.teacherSer.deleteTeacher(id).subscribe(data=>{
+      this.reload()
+    },error=>{
+      console.log(error);
+    })
+  }
 
 
 }
