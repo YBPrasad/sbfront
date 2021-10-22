@@ -1,4 +1,54 @@
-<div class="teacher">
+<mat-tab-group>
+    <mat-tab label="Show All Teachers">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="Id">
+                <th mat-header-cell *matHeaderCellDef> Id</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef> Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.teacher_name}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Course">
+                <th mat-header-cell *matHeaderCellDef> Course</th>
+                <td mat-cell *matCellDef="let element"> {{element.course}} </td>
+              </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-tab>
+
+    <mat-tab label="Add Teacher">
+        <div class="formfield">
+            <mat-card>
+                <mat-card-title>ONLINE SCHOOL FORM</mat-card-title>
+                <mat-card-content>
+                    <mat-form-field>
+                        <mat-label>Student Name</mat-label>
+                        <input matInput  name="name" [(ngModel)]="name">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <mat-label>Course Name</mat-label>
+                        <input matInput name="course" [(ngModel)]="course">
+                    </mat-form-field>
+                    <br>
+
+                </mat-card-content>
+                <mat-card-footer>
+                    <button *ngIf="isUpdate" mat-raised-button color="primary" (click)="update()">UPDATE</button>
+                    <button *ngIf="!isUpdate" mat-raised-button color="primary" (click)="add()">ADD</button></mat-card-footer>
+            </mat-card>
+            
+        </div>
+    </mat-tab>
+    <mat-tab label="Edit Teachers">
+        
+    </mat-tab>
+</mat-tab-group>
+<!-- <div class="teacher">
     <div class="row">
         <div class="col-md-3">
             <p class="title">ADD NEW TEACHER</p>
@@ -49,4 +99,4 @@
             </table>
         </div>
     </div>
-</div>
+</div> -->

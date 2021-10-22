@@ -15,6 +15,9 @@ export class TeacherComponent implements OnInit {
   isUpdate:boolean=false;
   teacher?:Teacher
 
+  displayedColumns: string[] = ['Id', 'Name','Course'];
+  dataSource:Teacher[]=[]
+
   teachers?:Teacher[]
   constructor(private teacherSer:TeacherService) { }
 
@@ -24,7 +27,9 @@ export class TeacherComponent implements OnInit {
 
   reload(){
     this.teacherSer.getAll().subscribe(data=>{
+      
       this.teachers=data;
+      this.dataSource=this.teachers;
     },error=>{
       console.log(error)
     })
