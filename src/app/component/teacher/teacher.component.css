@@ -9,3 +9,41 @@
     border: 1px solid red;
     padding-top: 10px;
 }
+
+table{
+    width: 100%;
+}
+
+.formfield{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+mat-card{
+    
+    width: 500px;
+}
+
+mat-form-field{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}.formfield{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+mat-card{
+    
+    width: 500px;
+}
+
+mat-form-field{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
