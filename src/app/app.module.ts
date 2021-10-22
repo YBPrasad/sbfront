@@ -27,13 +27,15 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSortModule} from '@angular/material/sort';
+import { CourseComponent } from './component/course/course.component';
 @NgModule({
   declarations: [
     AppComponent,
     StudentComponent,
     TeacherComponent,
     HeaderComponent,
-    DefaultComponent
+    DefaultComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
