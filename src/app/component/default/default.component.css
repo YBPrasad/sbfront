@@ -9,7 +9,7 @@ mat-sidenav{
     background-color: rgb(13, 13, 153);
     color: white;
     border-radius: 10px;
-    padding: 16px;
+    /* padding: 16px; */
     text-align: center;
 }
 
@@ -25,7 +25,26 @@ mat-sidenav{
     color:lightgray */
 }
 
-.menu-button{
-    width: 100%;
-    font-size:1rem;
+.logo{
+    margin-top: 6px;
+    margin-right: 2px;
 }
+
+.menu-button{
+    width: 95%;
+    font-size:1.2rem;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin:5px 0;
+}
+
+.menu-button mat-icon{
+    margin-right: 8px;
+    
+}
+
+.student{color:rgb(13, 13, 153) ;background-color: whitesmoke;}
+.teacher{color:rgb(13, 13, 153) ;background-color: whitesmoke;}
+.course{color:rgb(13, 13, 153) ;background-color: whitesmoke;}
+

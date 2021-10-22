@@ -3,18 +3,24 @@
         <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
         <mat-icon *ngIf="sidenav.opened">close</mat-icon>
     </button>
+    <span><mat-icon class="logo">account_balance</mat-icon></span>
     ONLINE SCHOOL
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav">
-        <a routerLink="" mat-button class="menu-button">
-            <mat-icon>home</mat-icon>
+        <img src="../../../assets/images/open-laptop-isolated-white-screen-260nw-548778247.jpg" alt="" width="100%">
+        <a routerLink="" mat-button class="menu-button" routerLinkActive="student" [routerLinkActiveOptions]="{exact: true}" >
+            <mat-icon>account_box</mat-icon>
             <span>Student</span>
         </a>
-        <a routerLink="/teachers" mat-button class="menu-button">
-            <mat-icon>home</mat-icon>
+        <a routerLink="/teachers" mat-button class="menu-button" routerLinkActive="teacher" [routerLinkActiveOptions]="{exact: true}" >
+            <mat-icon>supervisor_account</mat-icon>
             <span>Teacher</span>
+        </a>
+        <a routerLink="/courses" mat-button class="menu-button" routerLinkActive="course" [routerLinkActiveOptions]="{exact: true}" >
+            <mat-icon>assignment</mat-icon>
+            <span>Course</span>
         </a>
     </mat-sidenav>
 
