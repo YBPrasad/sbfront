@@ -1,4 +1,5 @@
 <div class="course">
+    <h1>Available Courses</h1>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <ng-container matColumnDef="Id">
@@ -13,8 +14,6 @@
             <th mat-header-cell *matHeaderCellDef>#</th>
             <td mat-cell *matCellDef="let element"> {{element.number_of_student}} </td>
         </ng-container>
-    
-    
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
